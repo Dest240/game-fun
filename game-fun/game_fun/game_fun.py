@@ -1,89 +1,51 @@
 import random
-#in poetry shell,python3,>>>import game_fun>>>dir(game_fun)>>>game_fun.RPS('','')
-class RPS():
-    def __init__(self,arg1,arg2): # Are the user input and the random choice.
-        self.arg1 = self.take_user_input()
-        self.arg2 = self.random_selection()
-        self.main()
-    
-    def take_user_input(self): #Greet and take user input ASCII art and random
-        while True:
-            user_input = input("Enter your selection rock paper scissors: " ).lower();
-            if user_input in ['rock','paper','scissors']:
-                self.arg1 = user_input
-                return self.arg1
-            else:
-                print("Invalid input. Try again!");
-                
-    def random_selection(self):
-        selection_list = ['rock', 'paper', 'scissors']
-        choice = random.choice(selection_list)
-        self.arg2 = choice
-        return self.arg2
-    
-    def main(self): #user input check
-        if self.arg1 == 'rock':
-            self.rock();
-        if self.arg1 == 'paper':
-            self.paper();
-        if self.arg1 == 'scissors':
-            self.scissors();
-    
-    def rock(self): #random check
-        if self.arg2 == 'rock':
-            print("We Tied");
-            print('''
-            
-            
-            ''');#ASCII ART
-        if self.arg2 == 'paper':
-            print("You LOSE. Paper beats Rock.");
-            print('''
-            
-            
-            ''');#ASCII ART   
-        if self.arg2 == 'scissors':
-            print("You Win");
-            print('''
-            
-            
-            ''');#ASCII ART            
-def paper(self):
-        if self.arg2 == 'rock':
-            print("You Win")
-            print('''
-            
-            
-            ''')  # ASCII ART
-        elif self.arg2 == 'paper':
-            print("We Tied")
-            print('''
-            
-            
-            ''')  # ASCII ART
-        elif self.arg2 == 'scissors':
-            print("You LOSE. Scissors beats Paper.")
-            print('''
-            
-            
-            ''')  # ASCII ART
-    
-    def scissors(self):
-        if self.arg2 == 'rock':
-            print("You LOSE. Rock beats Scissors.")
-            print('''
-            
-            
-            ''')  # ASCII ART
-        elif self.arg2 == 'paper':
-            print("You Win")
-            print('''
-            
-            
-            ''')  # ASCII ART
-        elif self.arg2 == 'scissors':
-            print("We Tied")
-            print('''
-            
-            
-            ''')  # ASCII ART
+
+def take_user_input(): 
+    while True:
+        user_input = input("Enter your selection rock paper scissors: ").lower()
+        if user_input in ['rock', 'paper', 'scissors']:
+            return user_input
+        else:
+            print("Invalid input. Try again!")
+
+def random_selection():
+    selection_list = ['rock', 'paper', 'scissors']
+    return random.choice(selection_list)
+
+def main(user_input, random_choice): 
+    if user_input == 'rock':
+        rock(random_choice)
+    elif user_input == 'paper':
+        paper(random_choice)
+    elif user_input == 'scissors':
+        scissors(random_choice)
+
+def rock(random_choice): 
+    if random_choice == 'rock':
+        print("We Tied")
+    elif random_choice == 'paper':
+        print("You LOSE. Paper beats Rock.")
+    elif random_choice == 'scissors':
+        print("You Win")
+
+def paper(random_choice): 
+    if random_choice == 'rock':
+        print("You Win")
+    elif random_choice == 'paper':
+        print("We Tied")
+    elif random_choice == 'scissors':
+        print("You LOSE. Scissors beats Paper.")
+
+def scissors(random_choice): 
+    if random_choice == 'rock':
+        print("You LOSE. Rock beats Scissors.")
+    elif random_choice == 'paper':
+        print("You Win")
+    elif random_choice == 'scissors':
+        print("We Tied")
+
+if __name__ == "__main__":
+    user_input = take_user_input()
+    random_choice = random_selection()
+    main(user_input, random_choice)
+

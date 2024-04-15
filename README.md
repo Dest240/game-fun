@@ -2,22 +2,16 @@
 first package game fun
 
 #Design
-Name of pkg: rock.paper.scissors
-Purpose of pkg:
-Problem package is solving/doing:
-Requirements:
-Code:
-Unit Testing:
-Refactoring:
+Name of Package: game_fun
+Description: Allows the player to choose functions rock(),paper(),scissors(), or main().
 
-#Build
-Package:
-Docs:
+The rock funtionc allows you to select rock as your user choice and set the random choice to you choice.
+rock("scissors"||"paper"||"rock")
 
-#Deploy & Publish
-Publish Docs
-	gitHub-pages
-	readthedocs
-	custom site
-Deploy on PyPI or GitHub Packages
- 
+The scissors funtionc allows you to select scissors as your user choice and set the random choice to you choice.
+paper("scissors"||"paper"||"rock")
+
+The paper funtion allows you to select rock as your user choice and set the random choice to you choice.
+
+scissors("scissors"||"paper"||"rock")
+

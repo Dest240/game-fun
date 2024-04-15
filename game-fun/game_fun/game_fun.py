@@ -48,4 +48,42 @@ class RPS():
             
             
             ''');#ASCII ART            
-
+def paper(self):
+        if self.arg2 == 'rock':
+            print("You Win")
+            print('''
+            
+            
+            ''')  # ASCII ART
+        elif self.arg2 == 'paper':
+            print("We Tied")
+            print('''
+            
+            
+            ''')  # ASCII ART
+        elif self.arg2 == 'scissors':
+            print("You LOSE. Scissors beats Paper.")
+            print('''
+            
+            
+            ''')  # ASCII ART
+    
+    def scissors(self):
+        if self.arg2 == 'rock':
+            print("You LOSE. Rock beats Scissors.")
+            print('''
+            
+            
+            ''')  # ASCII ART
+        elif self.arg2 == 'paper':
+            print("You Win")
+            print('''
+            
+            
+            ''')  # ASCII ART
+        elif self.arg2 == 'scissors':
+            print("We Tied")
+            print('''
+            
+            
+            ''')  # ASCII ART
